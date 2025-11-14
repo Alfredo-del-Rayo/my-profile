@@ -1,0 +1,101 @@
+.resume-page { 
+    display: flex; 
+    flex-direction: column; 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    background-color: var(--color-primary); 
+}
+
+.resume-page h2 {
+    font-size: 2rem;
+    padding-left: 2rem;
+    color: var(--on-primary)
+}
+
+.resume-download-bar {
+    background-color: var(--color-primary-200);
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.resume-main-content {
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-primary-600);
+}
+.skills-list {
+    font-size: 1.5rem;
+}
+
+.inner-skills-list > li {
+    margin-left: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.skill-category {
+    margin: 10px;
+}
+
+.skill-category ul {
+    margin: 20px 0;
+}
+
+.resume-section {
+    padding-bottom: 20px;
+}
+
+.inner-skills-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem; 
+    list-style-position: inside;
+}
+.resume-content {
+    background: var(--color-primary-600);
+    padding-right: 10rem;
+    padding-bottom: 40px;
+}
+
+.resume-section > :not(h2) {
+    color: var(--on-primary);
+    padding-left: 4rem;
+}
+
+.resume-tile {
+    padding-left: 4rem;
+    color: var(--on-primary)
+}
+
+.resume-tile b {
+    font-size: 1.5rem;
+}
+
+.description-list {
+    font-size: 1.3rem;
+}
+
+.tile-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 800px) {
+    .inner-skills-list {
+    grid-template-columns: repeat(1, 1fr);
+    }
+
+    .inner-skills-list > li {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    }
+
+    .tile-header {
+        flex-direction: column;
+    }
+
+}

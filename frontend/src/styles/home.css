@@ -1,0 +1,355 @@
+.home-page { 
+    display: flex; 
+    flex-direction: column; 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    background-color: var(--color-primary); 
+}
+
+.home-page h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--on-primary);
+    font-family: var(--common-font);
+    margin: 10px;
+}
+
+.home-page p, 
+.home-page ol  {
+    color: var(--on-primary);
+    font-family: var(--common-font);
+    font-size: 1.3rem;
+}
+
+.home-page hr {
+    width: 70%;
+    border-top: 10px double white;
+}
+
+.profile-picture-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 5px 0;
+}
+
+.contact-icon {
+    height: 30px;
+}
+
+.contact-text a{
+    text-decoration: none;
+    color: var(--on-primary);
+    font-size: 1.2rem;
+}
+
+.profile-container{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: var(--color-primary-600);
+    padding: 10px;
+    margin: 0 10px 0 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-picture { 
+    height: 350px;
+    width: 350px;
+    margin: 20px;
+    border-radius: 175px;
+    border-color: var(--color-bg);
+    border-style: double;
+    border-width: 15px;
+}
+
+.profile-description {
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-description p{
+    margin-bottom: 40px;
+}
+
+.values-section-container{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-primary-600);
+    margin: 0;
+}
+
+.values-section {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.values-container {
+    margin-top: 20px;
+    display: flex;
+    width: 420px;
+    height: 420px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--light-blue);
+    border-style: double;
+    border-width: 15px;
+    border-color: white;
+}
+
+.values-absolute {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+.value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+
+.value h3{
+    align-content: center;
+}
+
+.value-one {
+    top: -130%;
+    left: -50%;
+    background-color: var(--color-primary-600a);
+    color: var(--on-primary);
+    z-index: 3;
+}
+
+.value-two {
+    top: 0%;
+    left: 30%;
+    background-color: var(--color-secondary-600a);
+    color: var(--on-secondary);
+    z-index: 1;
+}
+
+.value-three{
+    top: 0%;
+    left: -130%;
+    background-color: var(--color-tertiary-600a);
+    color: var(--on-tertiary);
+    z-index: 2;
+}
+
+.values-content {
+    width: max(300px, 80%);
+}
+
+.value-center {
+    text-align: center;
+}
+
+.link-bar-container {
+    margin: 10px;
+}
+
+.icon-link-anchor {
+    margin: 10px;
+}
+
+.icon-link-image {
+    height: 50px;
+}
+
+.icon-link-image:focus-visible,
+.icon-link-image:hover{
+    filter: brightness(1.5);
+    transform: translateY(-10px);
+}
+
+.nav-header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    background-color: var(--color-primary-200);
+    margin: 10px 0 0 0;
+    padding: 10px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: var(--color-primary-600);
+    color: var(--on-primary);
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5rem;
+    height: 50px;
+    border-radius: var(--radius);
+    padding: 5px 10px;
+    font-family: var(--header-font);
+    border: double 6px var(--on-primary);
+}
+
+.nav-item:hover,
+.nav-item:focus-visible {
+    filter: brightness(1.2);
+}
+
+.nav-item:hover {
+    transform: translateY(-5px);
+}
+
+.home-page .icon-image {
+    height: 30px;
+}
+
+.faqs-section{
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--color-primary-600);
+    padding-bottom: 100px;
+}
+
+.faq-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--on-primary);
+}
+
+.faqs-container {
+    width: 80%;
+}
+
+.faqs-description {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    margin: 2px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: var(--color-primary);
+    color: var(--on-primary)
+}
+
+.faq-question p {
+    font-size: 1.5rem;
+}
+
+.faq-answer {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    padding-left: 2rem;
+    flex-direction: row;
+    font-size: 1.5rem;
+    background: var(--color-primary-600);
+
+}
+
+.arrow-up {
+    width: 20px;
+    height: 20px;
+    margin: 0 20px;
+    background: var(--color-primary-200);
+    clip-path: polygon(0% 100%, 100% 100%, 50%  0% );
+}
+
+.arrow-down {
+    width: 20px;
+    height: 20px;
+    margin: 0 20px;
+    background: var(--color-primary-200);
+    clip-path: polygon(0% 0%, 100% 0%, 50%  100% );
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+
+
+
+@media (max-width: 800px) {
+    .profile-container {
+        flex-direction: column;
+    }
+
+    .profile-description h3 {
+        font-size: 1.5rem;
+    }
+
+    .profile-description p {
+        font-size: 16px;
+    }
+    .profile-picture {
+        height: 180px;
+        width: 180px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .values-container {
+        width: 320px;
+        height: 320px;
+    }
+
+    .values-absolute {
+        width: 75px;
+        height: 75px;
+    }
+
+    .value {
+        width: 150px;
+        height: 150px;
+    }
+
+    .arrow-down {
+        margin: 0;
+    }
+
+    .arrow-up {
+        margin: 0;
+    }
+
+}

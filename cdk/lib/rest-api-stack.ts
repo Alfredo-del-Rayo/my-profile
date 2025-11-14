@@ -26,8 +26,8 @@ export class RestApiStack extends cdk.Stack {
             autoDeleteObjects: true,
          });
 
-         const filesLambda = new NodejsFunction(this, "ImageFn", {
-            entry: "lambda/hello/index.ts",
+         const filesLambda = new NodejsFunction(this, "PrivateFilesFn", {
+            entry: "lambda/privateFiles/index.ts",
             handler: "handler",
             runtime: lambda.Runtime.NODEJS_22_X,
             environment: {
@@ -36,10 +36,24 @@ export class RestApiStack extends cdk.Stack {
             }
          });
 
+         const unlockLambda = new NodejsFunction(this, "UnlockLambda", {
+            entry: "lambda/unlock/index.ts",
+            handler: "handler",
+            memorySize: 512,
+            runtime: lambda.Runtime.NODEJS_22_X,
+         });
+
+         const sessionStatusLambda = new NodejsFunction(this, "SessionStatusLambda", {
+            entry: "lambda/session/index.ts",
+            handler: "handler",
+            runtime: lambda.Runtime.NODEJS_22_X
+         });
+
          privateBucket.grantRead(filesLambda);
 
          const publicBucket = new s3.Bucket(this, "PublicBucket", {
             websiteIndexDocument: "index.html",
+            websiteErrorDocument: "index.html",
             blockPublicAccess: new s3.BlockPublicAccess({
                blockPublicAcls: false,
                blockPublicPolicy: false,
@@ -62,6 +76,20 @@ export class RestApiStack extends cdk.Stack {
          })
          
          const fileLambdaIntegration = new integrations.HttpLambdaIntegration('FileIntegration', filesLambda);
+         const unlockLambdaIntegration = new integrations.HttpLambdaIntegration('UnlockIntegration', unlockLambda);
+         const sessionStatusLambdaIntegration = new integrations.HttpLambdaIntegration('SessionStatusIntegration', sessionStatusLambda);
+
+         httpApi.addRoutes({
+            path: '/api/unlock',
+            methods: [apigwyv2.HttpMethod.POST],
+            integration: unlockLambdaIntegration
+         })
+
+         httpApi.addRoutes({
+            path: '/api/session',
+            methods: [apigwyv2.HttpMethod.GET],
+            integration: sessionStatusLambdaIntegration
+         })
 
          httpApi.addRoutes({
          path: '/files/{proxy+}',
@@ -69,21 +97,42 @@ export class RestApiStack extends cdk.Stack {
          integration: fileLambdaIntegration,
          });
 
-         const s3Integration = new integrations.HttpUrlIntegration(
-            "S3Integration",
-            `https://${publicBucket.bucketWebsiteDomainName}`
+         const staticAssetsURL = publicBucket.bucketWebsiteUrl + "/assets/{proxy}"
+         const fontsURL =  publicBucket.bucketWebsiteUrl + "/fonts/{proxy}"
+         const staticRootFiles = publicBucket.bucketWebsiteUrl + "/{proxy}"
+         
+         const s3RootIntegration = new integrations.HttpUrlIntegration(
+            "S3RootIntegration",
+            staticRootFiles
          );
 
-         const paths = ["/", "/portfolio", "/resume"];
-        
-         for (const path of paths) {
-            httpApi.addRoutes({
-            path,
-            methods: [apigwyv2.HttpMethod.GET],
-            integration: s3Integration,
-            });
-         }
+         const s3FontsIntegration = new integrations.HttpUrlIntegration(
+            "S3FontsIntegration",
+            fontsURL
+         );
+         
+         const s3AssetsIntegration = new integrations.HttpUrlIntegration(
+            "S3AssetsIntegration",
+            staticAssetsURL
+         );
 
+        httpApi.addRoutes({
+         path: "/assets/{proxy}",
+         methods: [apigwyv2.HttpMethod.GET],
+         integration: s3AssetsIntegration,
+         });
+
+         httpApi.addRoutes({
+         path: "/fonts/{proxy}",
+         methods: [apigwyv2.HttpMethod.GET],
+         integration: s3FontsIntegration,
+         });
+
+         httpApi.addRoutes({
+         path: "/{proxy}",
+         methods: [apigwyv2.HttpMethod.GET],
+         integration: s3RootIntegration,
+         });
 
       const myFunctionURL = filesLambda.addFunctionUrl({
               authType:lambda.FunctionUrlAuthType.NONE

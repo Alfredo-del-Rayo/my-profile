@@ -1,0 +1,137 @@
+@import "@/styles/style.css";
+
+.unlock-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.unlock-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient(var(--color-bg), white);
+    opacity: 0.9;
+    padding: 0 50px;
+    border-radius: calc( 4 * var(--radius));
+    border: solid 3px black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
+    max-width: 600px;
+    height: 400px;
+}
+
+.form-title {
+    font-family: var(--important-font);
+    font-size: 2rem;
+    margin: 0;
+    padding-bottom: 0;
+}
+
+.form-subtitle {
+    font-family: var(--common-font);
+    font-weight: 400;
+    padding: 0;
+    margin-top: 2px;
+    margin-bottom:2px;
+}
+
+.form-note {
+    font-family: var(--common-font);
+    font-weight: 400;
+    font-size: .8rem;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-family: var(--important-font);
+    font-weight: 300;
+    justify-content: space-evenly;
+}
+
+input {
+    height: 30px;
+    border-radius: var(--radius);
+    border: solid 2px  var(--color-primary);
+
+}
+
+button {
+    background-color: var(--color-primary);
+    margin-top: 20px;
+    border-radius: var(--radius);
+    border: solid 3px var(--color-primary);
+    padding: 4px 6px;
+    font-size: 1.2rem;
+    color: white;
+    font-family: var(--common-font);
+}
+
+.password-field {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    width: 320px;
+    margin:0;
+    font-family: var(--common-font);
+}
+
+.eye-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.error-message {
+    color: red;
+    margin: 0;
+    font-family: var(--common-font);
+}
+
+button:disabled {
+  opacity: .4; 
+  cursor: not-allowed;
+}
+
+.separator {
+    width: 40%;
+    height: 1px;
+    background-color: black; 
+    margin: 5px 0; 
+}
+
+.lock-icon {
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    vertical-align: middle;
+}
+
+@media (max-width: 500px)  {
+    .unlock-form {
+        padding: 0 2px;
+        margin: 0 5px;
+    }
+}

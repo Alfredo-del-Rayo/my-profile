@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.157",
+    "@types/bcrypt": "^6.0.0",
     "@types/jest": "^29.5.14",
     "@types/node": "22.7.9",
     "aws-cdk": "2.1031.2",
@@ -22,7 +23,9 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.928.0",
+    "@aws-sdk/s3-request-presigner": "^3.931.0",
     "aws-cdk-lib": "2.215.0",
+    "bcryptjs": "^3.0.3",
     "constructs": "^10.0.0",
     "dotenv": "^17.2.3",
     "jose": "^6.1.1"

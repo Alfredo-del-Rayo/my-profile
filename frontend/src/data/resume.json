@@ -1,0 +1,146 @@
+{
+	"order": [
+		"heading",
+		"objective",
+		"skills",
+		"education",
+		"projects",
+		"teams",
+		"workExperience",
+		"interests"
+	],
+	"objective": {
+			"description": "I am highly motivated professional with a strong background in Computer Engineering. I am seeking for a position where my work ethic, problem-solving skills, and passion for technology can contribute to the success of the team and make a positive impact."
+		},
+	"skills": [
+		{
+			"category": "Development",
+			"skills": [ "Java", "C / C++ / C#", "Python", "Kotlin", "JavaScript / TypeScript", "SQL", "Node.js", "React"]
+		},
+		{
+			"category": "Deployment & Hosting",
+			"skills": ["AWS", "Azure"]
+		},
+		{
+			"category": "Version Control",
+			"skills": ["Git", "GitHub", "Bitbucket"]
+		},
+		{
+			"category": "CI/CD & DevOps",
+			"skills": ["GitHub Actions", "Docker", "Kubernetes", "AWS CDK"]
+		},
+		{
+			"category": "Software Testing",
+			"skills": ["Jest", "Espresso", "JUnit", "Selenium"]
+		},
+		{
+			"category": "Engineering & Design",
+			"skills": ["System Verilog", "ModelSim", "Solidworks", "AutoCAD"]
+		},
+		{
+			"category": "Scripting & Automation",
+			"skills": ["Bash/Batch", "YAML"]
+		}
+	],
+	"education": [
+		{
+			"school": "University of British Columbia",
+			"timeline": "Sep 2021 - May 2025",
+			"degree": "Bachelor of Applied Science - Computer Engineering",
+			"awards": "Dean's List"
+		}
+	],
+	"teams": [
+		{
+			"team": "Agrobot Design Team",
+			"location": "UBC Vancouver",
+			"timeline": "Sep 2023 - Jan 2025",
+			"position": "Navigation Team Member",
+			"description": [
+				"Developed a user-friendly interface for diverse sensors, including the Intel RealSense IMU, facilitating acquisition and interpretation of location and angle readings",
+				"Collaborated on the integration of backend functionalities for a control website, and the incorporation of OpenCV features to enhance image processing capabilities"
+			]
+		},
+		{
+			"team": "Innovate Sustain and Design Club",
+			"location": "UBC Okanagan",
+			"timeline": "Jan 2022 - April 2022",
+			"position": "Electric Team Member",
+			"description": [
+				"Conducted thorough research and analysis of electrical components for the Solar Bench Project, including battery, charge controllers, PV arrays, wires, and circuit breakers, ensuring optimal performance and functionality",
+				"Collaborated in the development of C++ code for an Arduino Current Sensor, enabling real-time monitoring and reporting of electrical current flow through charging outlets via the Arduino App"
+			]
+		}
+	],
+	"projects": [
+		{
+			"name": "AI Enhanced Application Security Testing Platform",
+			"type": "Team Project",
+			"timeline": "Sep 2024 - April 2025",
+			"description": [
+				"Created a platform that provides a comprehensive interface for users to launch security tests and get live results and recommendations along with a chatbot for assistance",
+				"Leveraged AWS CDK to deploy the platform on AWS, utilizing services such as Amplify, S3, DynamoDB, and EKS and  for efficient resource management and data storage",
+				"Implemented CI/CD pipelines using GitHub Actions and AWS CDK to automate the deployment process, ensuring a streamlined and efficient workflow",
+				"Engineered a responsive, intuitive UI with React and TypeScript, integrated with DAST tools to strengthen application security testing, while empowering users to fully configure and control all testing parameters."
+			]
+		},
+		{
+			"name": "Trailblazers, Android App",
+			"type": "Team Project",
+			"timeline": "Jan 2025 - April 2025",
+			"description": [
+				"Created an app that allows users to find joggers nearby using google maps and OAUth",
+				"Leveraged testing frameworks such as Jest and Espresso to ensure 100% branch coverage on the backend implementation and end-to-end testing on the Android application",
+				"Implemented CI/CD pipelines using GitHub Actions and Docker to automate the deployment process, ensuring a streamlined and efficient workflow"
+			]
+		},
+		{
+			"name": "Shopping Website",
+			"type": "Personal Project",
+			"timeline": "July 2023",
+			"description": [
+				"Successfully developed a full-stack dynamic shopping website using Express with EJS templates, MySQL, and Squares payments API",
+				"Implemented key shopping website features, including product and collection models, account login, newsletter subscription, search bar, self-updating checkout, and engaging effects such as Parallax and stackable header for mobile users",
+				"Demonstrated advanced CSS, JavaScript, and HTML skills to maintain a consistent and visually appealing format across all pages, ensuring a seamless user experience"
+			]
+		}
+	],
+	"workExperience": [
+		{
+			"company": "Geering UP UBC",
+			"location": "Vancouver, B.C.",
+			"timeline": "June 2022 – Sep 2022",
+			"position": "Before Care Instructor",
+			"description": [
+				"Orchestrated captivating daily activities for groups of 20 K-7 children",
+				"Fostered a collaborative environment by maintaining open communication with a team of two instructors, enhancing camper safety, refining activity plans, and ensuring seamless coordination"
+			]
+		},
+		{
+			"company": "Bates Restaurants (McDonald’s)",
+			"location": "Burnaby, B.C.",
+			"timeline": "May 2022 – August 2022",
+			"position": "Crew Member",
+			"description": [
+				"Communicated actively with team members to ensure smooth product assembly",
+				"Provided excellent customer service by taking orders with attentiveness, kindness, and respect"
+			]
+		},
+		{
+			"company": "UBCO Disability Resource Centre",
+			"location": "Kelowna, B.C.",
+			"timeline": "Jan 2022 – April 2022",
+			"position": "Peer Note Taker",
+			"description": [
+				"Developed comprehensive lecture summaries for the Fundamental of Sustainable Engineering class, capturing essential concepts and insights emphasized by the professor and course materials",
+				"Applied visually engaging strategies like charts, keywords, and diagrams to enhance the comprehension of complex concepts"
+			]
+		}
+	],
+	"interests": {
+			"description": [
+				"Collaborating on family online business and vendor markets",
+				"Volunteering on the Engineering Open House & Work Study Committee"
+			]
+		}
+}
